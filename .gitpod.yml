@@ -24,3 +24,9 @@ tasks:
   name: Server
 - command: echo "Welcome, please allow Server terminal to finish composer and drupal install. It takes a while!" && gp await-port 8888 && drush uli --uri=$(gp url 8888)
   name: Terminal
+
+vscode:
+  extensions:
+    - neilbrayfield.php-docblocker@2.1.0:DG/0jImoYat50A1oQ633dQ==
+    - mblode.twig-language-2@0.9.1:RU6BsxXlTQVjCzHru+HmBw==
+    - DmitryDorofeev.empty-indent@0.2.0:KgkkbefusxZwAF/KnY5qqg==
