@@ -20,7 +20,7 @@ ports:
 # See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
 - init: composer install && ln -s ~/bin/adminer.php web/adminer.php
-  command: mysql -e "CREATE USER 'user'@'localhost' IDENTIFIED by 'pass';" && mysql -e "GRANT ALL PRIVILEGES ON *.* to 'user'@'localhost';" && mysql -e "CREATE DATABASE db;" && mysql -e "FLUSH PRIVILEGES;" && drush si -y --db-url=mysql://user:pass@localhost:3306/db && drush rs 0.0.0.0:8888
+- command: mysql -e "CREATE USER 'user'@'localhost' IDENTIFIED by 'pass';" && mysql -e "GRANT ALL PRIVILEGES ON *.* to 'user'@'localhost';" && mysql -e "CREATE DATABASE db;" && mysql -e "FLUSH PRIVILEGES;" && drush si -y --db-url=mysql://user:pass@localhost:3306/db && drush rs 0.0.0.0:8888
   name: Server
 - command: echo "Welcome, please allow Server terminal to finish composer and drupal install. It takes a while!" && gp await-port 8888 && drush uli --uri=$(gp url 8888)
   name: Terminal
